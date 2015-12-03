@@ -1,0 +1,6 @@
+<div>
+<% @posts.each do |post| %>
+	<img src="<%= post.link_img %>" alt="">
+	<p><%= post.description %></p>
+<%end%>
+</div>
