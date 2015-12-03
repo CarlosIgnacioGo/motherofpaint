@@ -1,0 +1,12 @@
+<%= form_for @post do |f| %>
+  <%= f.label :link_youtube %>
+  <%= f.text_field :link_youtube %>
+
+  <%= f.label :link_img %>
+  <%= f.text_field :link_img %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.submit %>
+<%end%>
