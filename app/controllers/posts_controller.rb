@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(set_params)
+    @post = Post.new(post_params)
 
     if @post.save
     	flash[:notice] = "El post se a creado correctamente"
@@ -19,9 +19,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+  	@post = Post.find(params[:id])
+  end
+
   private
 
-  def set_params
+
+
+  def post_params
   	params.require(:post).permit(:link_youtube, :link_img, :description)
   end
 end
