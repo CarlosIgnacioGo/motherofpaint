@@ -17,3 +17,36 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+	background: #f6f5f6;
+}
+
+.navbar{
+	margin:0;
+}
+
+.banner-trippy{
+	background: url(https://vines.s3.amazonaws.com/static/api/hands-tho-new.gif) no-repeat fixed;
+	height: 150px;
+	width: 100%;
+}
+
+.container-post{
+	margin-top: 80px;
+}
+.img-post{
+	width: 100%;
+}
+
+.panel-default{
+	border: transparent;
+}
+.panel-body-post{
+	padding:0;
+}
+
+.panel-heading, .panel-footer{
+	background:#fff !important;
+}
+
+

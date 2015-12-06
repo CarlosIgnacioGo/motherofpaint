@@ -7,8 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Nuevo post", new_post_path %>
-<%= yield %>
+	<nav class="navbar navbar-inverse"><!--navbar-fixed-top-->
+  		<section class="container">
+    		<section class="navbar-header">
+      			<a class="navbar-brand" href="#">Mother of Paint</a>
+    		</section>
+    		<ul class="nav navbar-nav navbar-right">
+    			<%= link_to "Nuevo Post", new_post_path, class: "btn btn-info navbar-btn" %>
+    		</ul>
+  		</section>
+	</nav>
 
+<!--<section class="banner-trippy">
+</section>-->
+<% flash.each do |key,msg|%>
+  <div class="alert alert-<%=key%>" role="alert">
+    <p><%= msg %></p>
+  </div>
+<%end%>
+<%= yield %>
 </body>
 </html>
+

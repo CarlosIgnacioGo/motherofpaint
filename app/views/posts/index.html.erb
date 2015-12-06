@@ -1,6 +1,28 @@
-<div>
-<% @posts.each do |post| %>
-	<img src="<%= post.link_img %>" alt="">
-	<p><%= post.description %></p>
-<%end%>
-</div>
+<section class="container container-post" tyle="position:fixed;">
+	<section class="row">
+		<section class="col-lg-6 col-lg-offset-3">
+			<% @posts.each do |post| %>
+				<article class="panel panel-default">
+					<section class="panel-heading clearfix">
+						<div class="dropdown  pull-right ">
+						  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						    <li><%= link_to 'Ver post', post_path(post) %></li>
+						  </ul>
+						</div>
+					</section>
+					<section class="panel-body panel-body-post">
+						<img class="img-post" src="<%= post.link_img %>" alt="">
+						<!--<iframe width="100%" height="315" src="https://www.youtube.com/embed/<%= post.link_youtube %>" frameborder="0" allowfullscreen></iframe>-->
+					</section>
+					<section class="panel-footer text-center"><%= post.description %></section>
+					<section class="panel-footer text-center"><div class="btn-group" role="group" aria-label="...">
+					  <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-default' %>
+					  <%= link_to 'Eliminar', post, method: :delete ,class: 'btn btn-default' %>
+					</section>			
+				</article>
+			<%end%>	
+		</section>
+	</section>
+</section>
