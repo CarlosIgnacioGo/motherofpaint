@@ -10,7 +10,7 @@
 	<nav class="navbar navbar-inverse"><!--navbar-fixed-top-->
   		<section class="container">
     		<section class="navbar-header">
-      			<a class="navbar-brand" href="#">Mother of Paint</a>
+      			<%= link_to 'Mother of Paint', posts_path, class: "navbar-brand" %>
     		</section>
     		<ul class="nav navbar-nav navbar-right">
     			<%= link_to "Nuevo Post", new_post_path, class: "btn btn-info navbar-btn" %>
@@ -21,9 +21,11 @@
 <!--<section class="banner-trippy">
 </section>-->
 <% flash.each do |key,msg|%>
-  <div class="alert alert-<%=key%>" role="alert">
+  <section class="alert alert-<%=key%>" role="alert">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <p><%= msg %></p>
-  </div>
+    
+  </section>
 <%end%>
 <%= yield %>
 </body>
